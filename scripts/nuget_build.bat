@@ -1,5 +1,4 @@
 @echo off
-setlocal
 cd %~dp0
 
 "%VS140COMNTOOLS%\VsMSBuildCmd.bat" && ^
