@@ -4,6 +4,7 @@ version: "{branch}-{build}"
 install:
   - ps: (new-object net.webclient).DownloadFile('http://downloads.coapp.org/files/CoApp.Tools.Powershell.msi', 'CoApp.Tools.Powershell.msi')
   - ps: msiexec /i CoApp.Tools.Powershell.msi /quiet /qn /norestart
+  - ps: [System.Environment]::SetEnvironmentVariable("PSMODULEPATH", [System.Environment]::GetEnvironmentVariable("PSMODULEPATH", "User") , "User")
 
 build_script:
   - ps: .\scripts\nuget_build.bat
